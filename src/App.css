@@ -1,38 +1,267 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+        :root {
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 50%, #581c87 100%);
+            --hero-gradient: linear-gradient(135deg, #0c1e4a 0%, #1e1b4b 50%, #2d1b69 100%);
+            --card-blue: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --card-purple: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%);
+            --card-indigo: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+        }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+        body {
+            background: linear-gradient(135deg, #111827 0%, #0c1e4a 50%, #1e1b4b 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+        /* Header */
+        .navbar-custom {
+            background: var(--primary-gradient);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-.App-link {
-  color: #61dafb;
-}
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #93c5fd, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+        .nav-link {
+            color: #fff !important;
+            transition: all 0.3s;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem !important;
+            margin: 0 0.25rem;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: #3b82f6;
+            transform: scale(1.05);
+        }
+
+        .rocket-icon {
+            animation: pulse 2s infinite;
+            color: #93c5fd;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--hero-gradient);
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==');
+            opacity: 0.3;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        /* Cards */
+        .feature-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 60px rgba(59, 130, 246, 0.5);
+        }
+
+        .card-blue { background: var(--card-blue); }
+        .card-purple { background: var(--card-purple); }
+        .card-indigo { background: var(--card-indigo); }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Quote Card */
+        .quote-card {
+            background: linear-gradient(to right, #581c87, #4c1d95);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px solid #a855f7;
+            margin: 2rem 0;
+        }
+
+        .quote-mark {
+            font-size: 4rem;
+            color: #d8b4fe;
+            line-height: 1;
+        }
+
+        /* Gallery */
+        .gallery-item {
+            height: 300px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 0.4;
+        }
+
+        .gallery-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .gallery-icon {
+            font-size: 4rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            opacity: 1;
+        }
+
+        .gallery-purple { background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%); }
+        .gallery-red { background: linear-gradient(135deg, #dc2626 0%, #f97316 100%); }
+        .gallery-orange { background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%); }
+        .gallery-blue { background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%); }
+        .gallery-gray { background: linear-gradient(135deg, #4b5563 0%, #2563eb 100%); }
+        .gallery-yellow { background: linear-gradient(135deg, #eab308 0%, #f97316 100%); }
+
+        /* Contact Form */
+        .form-custom {
+            background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .form-control-custom {
+            background-color: #0c1e4a;
+            color: #fff;
+            border: 2px solid #1e40af;
+            padding: 0.75rem 1rem;
+        }
+
+        .form-control-custom:focus {
+            background-color: #0c1e4a;
+            color: #fff;
+            border-color: #a855f7;
+            box-shadow: none;
+        }
+
+        .btn-submit {
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            border: none;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            transform: scale(1.05);
+            background: linear-gradient(to right, #1e40af, #7e22ce);
+        }
+
+        .success-message {
+            background-color: #10b981;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #111827, #0c1e4a, #1e1b4b);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* About Page */
+        .about-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .about-mini-card {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .about-indigo { background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%); }
+        .about-purple { background: linear-gradient(135deg, #7e22ce 0%, #4338ca 100%); }
+
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+        }
