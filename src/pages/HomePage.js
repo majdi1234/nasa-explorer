@@ -1,12 +1,11 @@
-// src/pages/HomePage.js
 import React, { useEffect } from 'react';
 
-// On déplace la fonction pour créer les étoiles ici
+// tawa n7otou function ta3 njoum style .
 const createStars = () => {
     const starsContainer = document.getElementById('stars');
     if (!starsContainer) return;
     
-    starsContainer.innerHTML = ''; // Vide le conteneur avant d'ajouter
+    starsContainer.innerHTML = ''; // nfarghou container qabel ma nzidou
     for (let i = 0; i < 50; i++) {
         const star = document.createElement('div');
         star.className = 'star';
@@ -22,14 +21,14 @@ const createStars = () => {
 
 
 function HomePage() {
-  // useEffect est utilisé pour exécuter du code après que le composant est affiché
+  // useeffect bech yexecuti code baad ma component yetaffich
 useEffect(() => {
     createStars();
-  }, []); // Le tableau vide signifie que ça ne s'exécute qu'une seule fois
+  }, []); // tableau vide yaani executed marra wa7da
 
 return (
     <>
-      {/* Hero Section */}
+      
       <section className="hero-section">
         <div id="stars"></div>
         <div className="hero-content text-center px-4">

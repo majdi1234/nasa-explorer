@@ -1,48 +1,42 @@
-// Le composant reçoit une fonction `onNavClick` pour changer de page
-function Header({ onNavClick, activePage }) {
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+// lehner mouch mehtaj props onNavClick w activePage
+function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
       <div className="container">
-        <a className="navbar-brand d-flex align-items-center" href="#" onClick={() => onNavClick('home')}>
+        {/* link logo yrouh lel racine "/" */}
+        <NavLink className="navbar-brand d-flex align-items-center" to="/">
           <i className="bi bi-rocket-takeoff fs-2 rocket-icon me-2"></i>
           <span>NASA Explorer</span>
-        </a>
+        </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
+            {/*  bech nbadlou <a> b <NavLink> */}
             <li className="nav-item">
-              <a 
-                className={`nav-link ${activePage === 'home' ? 'active' : ''}`} 
-                href="#" 
-                onClick={() => onNavClick('home')}>
+              {/* to hiya path li fil app.js */}
+              <NavLink className="nav-link" to="/">
                 <i className="bi bi-house me-1"></i> Accueil
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a 
-                className={`nav-link ${activePage === 'about' ? 'active' : ''}`} 
-                href="#" 
-                onClick={() => onNavClick('about')}>
+              <NavLink className="nav-link" to="/about">
                 <i className="bi bi-info-circle me-1"></i> À Propos
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-               <a 
-                className={`nav-link ${activePage === 'gallery' ? 'active' : ''}`} 
-                href="#" 
-                onClick={() => onNavClick('gallery')}>
+              <NavLink className="nav-link" to="/gallery">
                 <i className="bi bi-image me-1"></i> Galerie
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a 
-                className={`nav-link ${activePage === 'contact' ? 'active' : ''}`} 
-                href="#" 
-                onClick={() => onNavClick('contact')}>
+              <NavLink className="nav-link" to="/contact">
                 <i className="bi bi-telephone me-1"></i> Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
