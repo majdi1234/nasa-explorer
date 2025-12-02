@@ -1,4 +1,3 @@
-import React from 'react';
 import GalleryCard from '../components/GalleryCard';
 
 // tawa bech nzidou les items avec image jpg et wikipedia name
