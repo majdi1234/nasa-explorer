@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouteError, Link } from 'react-router-dom'; //  hook lil details erreur
 
 function ErrorPage() {

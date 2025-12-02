@@ -7,7 +7,6 @@ function Footer() {
             <span className="fs-5 fw-bold">NASA Explorer</span>
         </div>
         <p className="text-light mb-1">© 2024 NASA Explorer - Tous droits réservés</p>
-        <p className="text-muted small">Exploration de l'espace et au-delà</p>
         </div>
     </footer>
     );

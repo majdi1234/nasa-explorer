@@ -1,14 +1,17 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// lehner mouch mehtaj props onNavClick w activePage
+// lehner mouch mest7a9 props onNavClick w activePage
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
       <div className="container">
-        {/* link logo yrouh lel racine "/" */}
+        {/* link logo yemchi lel racine "/" */}
         <NavLink className="navbar-brand d-flex align-items-center" to="/">
-          <i className="bi bi-rocket-takeoff fs-2 rocket-icon me-2"></i>
+          <img 
+            src="/assets/NASA_logo.svg.png" 
+            alt="NASA Logo"
+            style={{ height: '40px', marginRight: '10px' }}
+          />
           <span>NASA Explorer</span>
         </NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -16,12 +19,12 @@ function Header() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {/*  bech nbadlou <a> b <NavLink> */}
+            
             <li className="nav-item">
               {/* to hiya path li fil app.js */}
               <NavLink className="nav-link" to="/">
                 <i className="bi bi-house me-1"></i> Accueil
-              </NavLink>
+              </NavLink>          
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">

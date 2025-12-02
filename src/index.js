@@ -13,7 +13,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
-import ErrorPage from './pages/ErrorPage'; // Notre nouvelle page d'erreur
+import ErrorPage from './pages/ErrorPage'; // tawa bech nzidou page erreur
 
 // tawa bech ncreate router w-config
 const router = createBrowserRouter([
