@@ -1,5 +1,3 @@
-// src/app.js - tawa bech nzidou comments
-import React from 'react';
 import { Outlet } from 'react-router-dom'; // tawa bech nimportiw outlet
 import Header from './components/Header';
 import Footer from './components/Footer';

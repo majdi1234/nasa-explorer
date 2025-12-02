@@ -1,4 +1,5 @@
 import React from 'react';
+import GalleryCard from '../components/GalleryCard';
 
 // tawa bech nzidou les items avec image jpg et wikipedia name
 const galleryItems = [
@@ -11,36 +12,19 @@ const galleryItems = [
 ];
 
 function GalleryPage() {
-  // tawa bech nouvrou wikipedia page lel item
-  const handleItemClick = (wikipediaName) => {
-    const wikipediaUrl = `https://fr.wikipedia.org/wiki/${encodeURIComponent(wikipediaName)}`;
-    window.open(wikipediaUrl, "_blank");
-  };
-
   return (
     <div className="container py-5">
       <h2 className="text-center mb-5 display-4 fw-bold gradient-text">Galerie Spatiale</h2>
       
       <div className="row g-4">
         {galleryItems.map((item, index) => (
-          <div className="col-md-4" key={index}>
-            <div 
-              className={`gallery-item ${item.color}`}
-              onClick={() => handleItemClick(item.wikipediaName)}
-              style={{ cursor: 'pointer', transition: 'transform 0.3s' }}
-              onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-              onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-            >
-              <div className="gallery-content">
-                <img 
-                  src={item.image} 
-                  alt={item.title}
-                  style={{ width: '120px', height: '120px', objectFit: 'cover', borderRadius: '8px' }}
-                />
-                <h3 className="fs-4 fw-bold mt-2">{item.title}</h3>
-              </div>
-            </div>
-          </div>
+          <GalleryCard 
+            key={index}
+            title={item.title}
+            image={item.image}
+            color={item.color}
+            wikipediaName={item.wikipediaName}
+          />
         ))}
       </div>
     </div>
