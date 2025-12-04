@@ -1,4 +1,3 @@
-// src/index.js - tawa bech nzidou comments
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
